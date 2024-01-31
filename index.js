@@ -24,6 +24,14 @@ function Stamp(text, color, shape) {
 
 const stamp = new Stamp();
 
+class CLI{
+    constructor(){
+        //Referenced the mini project for these lines, may not need them.
+        // this.title = '';
+        // //Array of logo objects [text, text color, shape, shape color]
+        // this.logo = []
+    }
+
 run() {
     return inquirer
       .prompt([
@@ -45,9 +53,16 @@ run() {
             name: 'shape',
             message: 'What shape would you like to incorporate?',
             choices: ['circle', 'square', 'triangle'],
-        }
+        },
+        {
+            type: 'list',
+            name: 'shape-color',
+            message: 'What color shape would you like?',
+            choices: ['red', 'green', 'blue', 'white', 'black'],
+        },
 
     ]);
+};
 };
 
 // stamp.printMetaData();
