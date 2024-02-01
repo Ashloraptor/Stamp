@@ -1,10 +1,11 @@
 const inquirer = require('inquirer');
-const { join } = require('path');
-const { writeFile } = require('fs/promises');
+const fs = require('fs');
+const path = require('path');
+//const { writeFile } = require('fs/promises');
 //Exmple has 
 //const { createDocument } = require('./document');
 //not sure if this adaptation is functional
-const { createSVG } = require('./svg');
+//const { createSVG } = require('./svg');
 
 function Stamp(text, color, shape) {
     this.text = text; //these are called arguments
@@ -22,19 +23,21 @@ function Stamp(text, color, shape) {
 //     console.log(`${this.text}`);
 // }
 
-const stamp = new Stamp();
+// const stamp = new Stamp();
 
-class CLI{
-    constructor(){
-        //Referenced the mini project for these lines, may not need them.
-        // this.title = '';
-        // //Array of logo objects [text, text color, shape, shape color]
-        // this.logo = []
-    }
+// class CLI{
+//     constructor(){
+//         //Referenced the mini project for these lines, may not need them.
+//         // this.title = '';
+//         // //Array of logo objects [text, text color, shape, shape color]
+//         // this.logo = []
+//     }
 
-run() {
-    return inquirer
-      .prompt([
+// run() {
+//     return inquirer
+//       .prompt(
+      var questions=
+      [
         {
           type: 'input',
           name: 'brand',
@@ -61,8 +64,14 @@ run() {
             choices: ['red', 'green', 'blue', 'white', 'black'],
         },
 
-    ]);
-};
-};
+    ];
+//     );
+// };
+// };
 
 // stamp.printMetaData();
+function init() {
+    inquirer.prompt(questions)
+};
+
+init();
