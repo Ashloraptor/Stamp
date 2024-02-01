@@ -70,8 +70,19 @@ function Stamp(text, color, shape) {
 // };
 
 // stamp.printMetaData();
+
+// Function to create  SVG file using the user input
+// function writeToFile(fileName, data) {
+//     return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+//   }
+
+//Get Inquirer running
 function init() {
-    inquirer.prompt(questions)
+    inquirer.prompt(questions).then((answers) =>{
+        //  console.log('Generating SVG...');
+        //  writeToFile('/examples', generateStamp({ ... answers}));
+        //  console.log('Thank you for using Stamp!')
+    });
 };
 
 init();
